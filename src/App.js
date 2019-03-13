@@ -5,13 +5,14 @@ import PropTypes from "prop-types";
 import { Header } from "./components/Header";
 import { TypeControl } from "./components/TypeControl";
 import { PartsControl } from "./components/PartsControl";
+import { Swatches } from "./components/Swatches";
 import { MonsterImage } from "./components/MonsterImage";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      colorValue: 120,
+      monsterColorValue: 120,
       type: "4legs",
       parts: [1, 2, 3, 4, 5, 6, 7, 8]
     };
@@ -24,10 +25,15 @@ class App extends Component {
       type: newType
    });
   }
-  getRandomParts(array){
+  getRandomParts(parts){
     this.setState({
-      parts: array
+      parts: parts
     });
+  }
+  changeColor(color){
+    this.setState({
+      monsterColorValue: Swatches.monsterColorValue
+  });
   }
   render() {
     return (
@@ -35,9 +41,10 @@ class App extends Component {
         <Header className="header"/>
         <TypeControl onChange={this.changeType} />
         <PartsControl onClick={this.getRandomParts} />
+        <Swatches />
         <MonsterImage
-          type={ this.state.type }
-          color={120 + "deg"}
+          type={this.state.type }
+          monsterColor={this.state.monsterColorValue+"deg"}
           parts={this.state.parts}
         />
       </div>
