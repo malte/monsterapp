@@ -32,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header className="header"/>
         <TypeControl onChange={this.changeType} />
         <PartsControl onClick={this.getRandomParts} />
         <MonsterImage

@@ -28,7 +28,7 @@ export class PartsControl extends React.Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>
+      <button className="button" onClick={this.handleClick}>
         Change Parts
       </button>
     );

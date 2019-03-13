@@ -19,7 +19,7 @@ export class TypeControl extends React.Component {
 
     return (
       <select
-            id="types"
+            className="dropdown "
             onChange={this.handleChange}>
             { typeOptions }
       </select>
