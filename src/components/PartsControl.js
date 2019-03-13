@@ -8,11 +8,8 @@ function getRandomInt(max) {
 export class PartsControl extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleClick = this.handleClick.bind(this);
-    this.randomizeParts = this.randomizeParts.bind(this);
-  }
-  handleClick() {
-    this.randomizeParts();
   }
   randomizeParts() {
     const randomParts = [];
@@ -22,6 +19,12 @@ export class PartsControl extends React.Component {
     console.log("randomparts button aktivated: " + randomParts);
     return randomParts;
   }
+  handleClick() {
+    const parts = this.randomizeParts();
+    console.log(parts);
+    this.props.onClick(parts);
+  }
+
 
   render() {
     return (

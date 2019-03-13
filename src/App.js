@@ -24,9 +24,9 @@ class App extends Component {
       type: newType
    });
   }
-  getRandomParts(newParts){
+  getRandomParts(array){
     this.setState({
-      parts: newParts
+      parts: array
     });
   }
   render() {
