@@ -50,8 +50,23 @@ width: 500px;
 }
 .monster-comp img {
   position: absolute;
-  width: 440px;
+  width: 450px;
 
+}
+.color-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.color-list li {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  -moz-box-shadow:    inset 0 5px 40px rgba(255, 255, 255, .2),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
+  -webkit-box-shadow: inset 0 5px 40px rgba(255, 255, 255, .2),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
+  box-shadow:         inset 0 5px 40px rgba(255, 255, 255, .2),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
 }
 .button, .dropdown {
   display: inline-block;
