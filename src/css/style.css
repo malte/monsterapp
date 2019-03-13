@@ -1,0 +1,19 @@
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+select {
+  display: inline-block;
+}
+div {
+  display: inline-block;
+}
+.monster-comp {
+}
+
+.monster-comp img {
+  width: 500px;
+  height: 650px;
+  position: absolute;
+  left: calc(50% - 250px);
+}
