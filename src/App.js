@@ -32,7 +32,7 @@ class App extends Component {
   }
   changeColor(color){
     this.setState({
-      monsterColorValue: Swatches.monsterColorValue
+      monsterColorValue: color
   });
   }
   render() {
@@ -41,7 +41,7 @@ class App extends Component {
         <Header className="header"/>
         <TypeControl onChange={this.changeType} />
         <PartsControl onClick={this.getRandomParts} />
-        <Swatches />
+        <Swatches onClick={this.changeColor}/>
         <MonsterImage
           type={this.state.type }
           monsterColor={this.state.monsterColorValue+"deg"}

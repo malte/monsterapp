@@ -7,6 +7,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   background-color: #ededde;
+  font-family: monospace;
 }
 select {
   display: inline-block;
@@ -59,17 +60,46 @@ width: 500px;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.color-list li {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  -moz-box-shadow:    inset 0 5px 40px rgba(255, 255, 255, .2),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
-  -webkit-box-shadow: inset 0 5px 40px rgba(255, 255, 255, .2),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
-  box-shadow:         inset 0 5px 40px rgba(255, 255, 255, .2),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
-}
+
 .button, .dropdown {
+  font-family: monospace;
   display: inline-block;
   margin: 0 0 1rem;
-  max-width: 100px;
+  height: 34px;
+  width: 200px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.dropdown::before {
+  content: "\f107";
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: ;
+}
+
+
+/* CAUTION: IE hackery ahead */
+
+
+select::-ms-expand {
+    display: none; /* remove default arrow in IE 10 and 11 */
+}
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    }
 }

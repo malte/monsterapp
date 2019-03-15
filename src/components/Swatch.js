@@ -12,7 +12,7 @@ export class Swatch extends React.Component {
   }
   render() {
     return (
-      <li
+      <li className="swatch"
       style={{ backgroundColor: `hsl(${this.props.color}, 50%, 50%)` }}
       onClick={this.handleClick}>
       </li>
