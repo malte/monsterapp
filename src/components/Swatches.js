@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Swatch } from "./Swatch";
-import './Swatch.css';
+import './Swatches.css';
 
 export class Swatches extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export class Swatches extends React.Component {
     });
 
     return (
-      <ul className="color-list">
+      <ul className="swatches">
         { ColorOptions }
       </ul>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './Swatch.css';
 
 export class Swatch extends React.Component {
   constructor(props) {

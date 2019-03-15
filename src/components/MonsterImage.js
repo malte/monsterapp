@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import './MonsterImage.css';
 
 export class MonsterImage extends React.Component {
   constructor(props) {
