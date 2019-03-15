@@ -7,6 +7,8 @@ import { TypeControl } from "./components/TypeControl";
 import { PartsControl } from "./components/PartsControl";
 import { Swatches } from "./components/Swatches";
 import { MonsterImage } from "./components/MonsterImage";
+import { TotalRandom } from "./components/TotalRandom";
+
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class App extends Component {
     };
     this.changeType = this.changeType.bind(this);
     this.getRandomParts = this.getRandomParts.bind(this);
+    this.getTotalRandom = this.getTotalRandom.bind(this);
   }
 
   changeType(newType){
@@ -28,6 +31,17 @@ class App extends Component {
   getRandomParts(parts){
     this.setState({
       parts: parts
+    });
+  }
+  getTotalRandom(parts, newType, color){
+    this.setState({
+      type: newType
+    });
+    this.setState({
+      parts: parts
+    });
+    this.setState({
+      monsterColorValue: color
     });
   }
   changeColor(color){
@@ -41,6 +55,7 @@ class App extends Component {
         <Header className="header"/>
         <TypeControl onChange={this.changeType} />
         <PartsControl onClick={this.getRandomParts} />
+        <TotalRandom onClick={this.getTotalRandom} />
         <Swatches onClick={this.changeColor}/>
         <MonsterImage
           type={this.state.type }

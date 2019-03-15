@@ -22,5 +22,6 @@ export class Swatches extends React.Component {
 }
 
 Swatches.propTypes = {
-  color: PropTypes.number
+  color: PropTypes.number,
+  monsterColor: PropTypes.number
 };

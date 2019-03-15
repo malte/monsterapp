@@ -23,4 +23,5 @@ export class Swatch extends React.Component {
 
 Swatch.propTypes = {
   color: PropTypes.number
+
 };
