@@ -31,6 +31,6 @@ export class MonsterImage extends React.Component {
 
 MonsterImage.propTypes = {
   type: PropTypes.string,
-  color: PropTypes.string,
+  monsterColor: PropTypes.string,
   parts: PropTypes.array
 };

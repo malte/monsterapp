@@ -15,8 +15,8 @@ class App extends Component {
     super(props);
     this.state = {
       monsterColorValue: 120,
-      type: "4legs",
-      parts: [1, 2, 3, 4, 5, 6, 7, 8]
+      type: "birds",
+      parts: Array(8).fill(1)
     };
     this.changeType = this.changeType.bind(this);
     this.getRandomParts = this.getRandomParts.bind(this);
@@ -44,9 +44,9 @@ class App extends Component {
       monsterColorValue: color
     });
   }
-  changeColor(color){
+  changeColor(newColor){
     this.setState({
-      monsterColorValue: color
+      monsterColorValue: newColor
   });
   }
   render() {
@@ -56,10 +56,10 @@ class App extends Component {
         <TypeControl onChange={this.changeType} />
         <PartsControl onClick={this.getRandomParts} />
         <TotalRandom onClick={this.getTotalRandom} />
-        <Swatches onClick={this.changeColor}/>
+        <Swatches onClick={(swatchColor) => this.changeColor(swatchColor)}/>
         <MonsterImage
           type={this.state.type }
-          monsterColor={this.state.monsterColorValue+"deg"}
+          monsterColor={(this.state.monsterColorValue - 38)+"deg"}
           parts={this.state.parts}
         />
       </div>

@@ -13,13 +13,13 @@ export class TypeControl extends React.Component {
   render() {
     const types = [ "4legs", "birds", "dragon", "fish", "gewuerm", "headfoot", "horses", "humanoid", "mantis", "spider" ];
     const typeOptions = types.map(function(type){
-      return <option value={type}>
+      return <option key={type} value={type}>
       {type}</option>;
     });
 
     return (
       <select
-            className="dropdown "
+            className="dropdown"
             onChange={this.handleChange}>
             { typeOptions }
       </select>
