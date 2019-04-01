@@ -6,7 +6,7 @@ export class Swatches extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      swatchColors : [ 0, 50, 120, 180, 260, 340]
+      swatchColors : [ 15, 55, 120, 180, 220, 260, 340]
     }
   }
   renderSwatches() {

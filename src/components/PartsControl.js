@@ -24,9 +24,10 @@ export class PartsControl extends React.Component {
 
 
   render() {
+    console.log(this.props.type);
     return (
       <button className="button" onClick={this.handleClick}>
-        Change Parts
+        New {this.props.type}!
       </button>
     );
   }

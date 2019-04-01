@@ -54,7 +54,10 @@ class App extends Component {
       <div className="App">
         <Header className="header"/>
         <TypeControl onChange={this.changeType} />
-        <PartsControl onClick={this.getRandomParts} />
+        <PartsControl
+          onClick={this.getRandomParts}
+          type={this.state.type }
+        />
         <TotalRandom onClick={this.getTotalRandom} />
         <Swatches onClick={(swatchColor) => this.changeColor(swatchColor)}/>
         <MonsterImage

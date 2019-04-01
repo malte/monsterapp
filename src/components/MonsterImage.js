@@ -4,11 +4,11 @@ import './MonsterImage.css';
 
 export class MonsterImage extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
-      type: props.type,
-      monsterColor: props.monsterColor,
-      parts: props.parts,
+      //type: props.type,
+      //monsterColor: props.monsterColor,
+      //parts: props.parts,
     };
   }
   render() {
