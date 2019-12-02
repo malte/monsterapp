@@ -9,7 +9,6 @@ import { Swatches } from "./components/Swatches";
 import { MonsterImage } from "./components/MonsterImage";
 import { TotalRandom } from "./components/TotalRandom";
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -21,19 +20,20 @@ class App extends Component {
     this.changeType = this.changeType.bind(this);
     this.getRandomParts = this.getRandomParts.bind(this);
     this.getTotalRandom = this.getTotalRandom.bind(this);
+    this.changeColor = this.changeColor.bind(this);
   }
 
-  changeType(newType){
+  changeType(newType) {
     this.setState({
       type: newType
-   });
+    });
   }
-  getRandomParts(parts){
+  getRandomParts(parts) {
     this.setState({
       parts: parts
     });
   }
-  getTotalRandom(parts, newType, color){
+  getTotalRandom(parts, newType, color) {
     this.setState({
       type: newType
     });
@@ -44,25 +44,23 @@ class App extends Component {
       monsterColorValue: color
     });
   }
-  changeColor(newColor){
+  changeColor(newColor, i) {
     this.setState({
       monsterColorValue: newColor
-  });
+    });
+    console.log(i);
   }
   render() {
     return (
       <div className="App">
-        <Header className="header"/>
+        <Header className="header" />
         <TypeControl onChange={this.changeType} />
-        <PartsControl
-          onClick={this.getRandomParts}
-          type={this.state.type }
-        />
+        <PartsControl onClick={this.getRandomParts} type={this.state.type} />
         <TotalRandom onClick={this.getTotalRandom} />
-        <Swatches onClick={(swatchColor) => this.changeColor(swatchColor)}/>
+        <Swatches onClick={swatchColor => this.changeColor(swatchColor)} />
         <MonsterImage
-          type={this.state.type }
-          monsterColor={(this.state.monsterColorValue - 38)+"deg"}
+          type={this.state.type}
+          monsterColor={this.state.monsterColorValue - 38 + "deg"}
           parts={this.state.parts}
         />
       </div>
