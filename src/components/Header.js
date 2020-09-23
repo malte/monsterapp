@@ -3,6 +3,6 @@ import './Header.css';
 
 export const Header = props => {
   return (
-    <div className="title">Monster App</div>
+    <div className="title">Find your spirit&nbsp;animal</div>
   );
 };

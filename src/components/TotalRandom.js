@@ -34,7 +34,7 @@ export class TotalRandom extends React.Component {
   render() {
     return (
       <button className="button totalRandom" onClick={this.handleClick}>
-        Random Everything
+        Random all
       </button>
     );
   }

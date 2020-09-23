@@ -16,6 +16,8 @@ export class TypeControl extends React.Component {
       return <option key={type} value={type}>
       {type}</option>;
     });
+    typeOptions.unshift( <option selected data-default key="default" value="">
+    select type</option>);
 
     return (
       <select
