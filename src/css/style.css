@@ -20,6 +20,36 @@ select {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 1rem;
+}
+.flex {
+  display: flex;
+}
+.row {
+  flex-direction:row;
+}
+.space-between {
+  justify-content: space-between;
+}
+.center {
+  justify-content: center;
+}
+.license {
+  margin-top: 2rem;
+}
+.social-media-link {
+  margin-top: 2rem;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  align-items: center;
+}
+.instagram-icon {
+  height: 40px;
+  margin-right: 1rem;
+  width: 40px;
+  background-color: black;
+  mask: url("./../assets/instagram.svg") no-repeat center / contain;
 }
 
 .button, .dropdown {
@@ -28,14 +58,17 @@ select {
   display: inline-block;
   margin: 0 0 1rem;
   padding: 0 1em;
-  height: 34px;
-  width: 200px;
+  height: 50px;
   font-size: 16px;
   border: 1px solid #ccc;
   background-color: white;
 }
-.dropdown option::before {
-  content: "°";
+.button:hover, .dropdown:hover {
+  background-color: #f1f1f1;
+
+}
+.dropdown option:before {
+  content: "V";
   font-size: 20px;
   position: absolute;
   right: 15px;
