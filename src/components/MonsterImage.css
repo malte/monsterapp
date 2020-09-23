@@ -1,20 +1,47 @@
+
 .frame {
-  display: block;
-  width: 500px;
+  border-image: url("./../assets/notched_and_bolted.png");
+  border-image-slice: 44;
+  border-image-width: 44px;
+  border-image-outset: 3px;
+  border-image-repeat: stretch;
+  border-style: inset;
+  position: absolute;
+  z-index: 1000;
   height: 650px;
-  background-color: #fff;
-  -moz-box-shadow:    inset 0 15px 40px rgba(0, 0, 0, .3),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
-  -webkit-box-shadow: inset 0 15px 40px rgba(0, 0, 0, .3),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
-  box-shadow:         inset 0 15px 40px rgba(0, 0, 0, .3),0 2px 1px rgba(255, 255, 255, .5), 0 -1px 1px rgba(0, 0, 0, .1);
-  border-radius: 4px;
+  width: 468px;
 }
+
+.container {
+  max-width: 500px;
+  height: 650px;
+  background-color: #f1f1f1;
+  -moz-box-shadow:    inset 0 15px 40px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: inset 0 15px 40px rgba(0, 0, 0, .3);
+  box-shadow:         inset 0 15px 40px rgba(0, 0, 0, .3);
+  --notchSize: 40px;
+  clip-path:
+  polygon(
+    0% var(--notchSize),
+    var(--notchSize) 0%,
+    calc(100% - var(--notchSize)) 0%,
+    100% var(--notchSize),
+    100% calc(100% - var(--notchSize)),
+    calc(100% - var(--notchSize)) 100%,
+    var(--notchSize) 100%,
+    0% calc(100% - var(--notchSize))
+  );
+}
+
 .monster-comp {
-  width: 450px;
-  height: 600px;
-  margin: 50px 25px;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  padding-top: 50px;
+  opacity:0;
+  transition: opacity 1s;
 }
 .monster-comp img {
   position: absolute;
-  width: 450px;
-
+  max-width: 450px;
 }
