@@ -6,7 +6,7 @@ export class Swatches extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      swatchColors: [15, 55, 120, 180, 220, 260, 340],
+      swatchColors: [0, 30, 59, 120, 200, 230, 276],
       selectedColorField: ""
     };
   }
@@ -16,6 +16,7 @@ export class Swatches extends React.Component {
       swatchesArray.push(
         <Swatch
           key={i}
+          selectedColorfield={this.state.selectedColorfield}
           swatchColor={this.state.swatchColors[i]}
           onClick={() => {
             this.props.onClick(this.state.swatchColors[i]);
@@ -27,6 +28,6 @@ export class Swatches extends React.Component {
     return swatchesArray;
   }
   render() {
-    return <ul className="swatches">{this.renderSwatches()}</ul>;
+    return <ul className="swatches flex row space-in-between">{this.renderSwatches()}</ul>;
   }
 }

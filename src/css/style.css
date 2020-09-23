@@ -14,19 +14,19 @@ select {
 }
 #root {
   margin: 0 auto;
-  width: 500px;
+  max-width: 500px;
 }
 .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1rem;
+  margin: 0.5rem;
 }
 .flex {
   display: flex;
 }
 .row {
-  flex-direction:row;
+  flex-direction: row;
 }
 .space-between {
   justify-content: space-between;
@@ -52,7 +52,8 @@ select {
   mask: url("./../assets/instagram.svg") no-repeat center / contain;
 }
 
-.button, .dropdown {
+.button,
+.dropdown {
   font-family: monospace;
   border-radius: 4px;
   display: inline-block;
@@ -63,9 +64,9 @@ select {
   border: 1px solid #ccc;
   background-color: white;
 }
-.button:hover, .dropdown:hover {
+.button:hover,
+.dropdown:hover {
   background-color: #f1f1f1;
-
 }
 .dropdown option:before {
   content: "V";
