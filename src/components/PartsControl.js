@@ -22,7 +22,6 @@ export class PartsControl extends React.Component {
   }
 
   render() {
-    console.log("PartsControl gets rendered");
     return (
       <button className="button" onClick={this.getRandomParts}>
         New {this.props.type}!

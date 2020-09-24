@@ -1,25 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./MonsterImage.css";
-import { useState, useEffect } from "react";
 
 const MonsterImage = props => {
-  const [monsterOpacity, setMonsterOpacity] = useState();
-  useEffect(() => {
-    console.log("useEffect runs");
-    setTimeout(setMonsterOpacity(0), 5000);
-    setMonsterOpacity(1);
-  });
+
 
   const contrast = "200%";
   const MonsterComposite = [];
-  const renderParts = (type, parts, color) => {
-    let partsNum = 8;
+
+  const renderParts = (type, part, color) => {
+    let partNum = 8;
     let i;
-    for (i = 0; i < partsNum; i++) {
-      console.log(`iteration: ${i}`)
+    for (i = 0; i < partNum; i++) {
       MonsterComposite.push(
       <img
+        key={`${type}_${part}_${i}`}
         style={{
           filter: `brightness(.${50 +
             2 * i}) contrast(${contrast}) sepia(1) saturate(2) hue-rotate(${
@@ -27,7 +22,7 @@ const MonsterImage = props => {
             })contrast(200%)`
           }}
           alt=""
-          src={`${process.env.PUBLIC_URL}/monster-parts/${type}/${partsNum - i}/${parts[i]}.png`}
+          src={`${process.env.PUBLIC_URL}/monster-parts/${type}/${partNum - i}/${part[i]}.png`}
       />
       )
     }

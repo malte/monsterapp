@@ -19,7 +19,6 @@ export class TotalRandom extends React.Component {
   }
   randomizeType() {
     const types = [ "4legs", "birds", "dragon", "fish", "gewuerm", "headfoot", "horses", "humanoid", "mantis", "spider" ];
-    console.log(types[Math.floor(Math.random()*types.length)]);
     const type = `${types[Math.floor(Math.random()*types.length)]}`;
     return type;
   }

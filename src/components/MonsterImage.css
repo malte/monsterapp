@@ -60,7 +60,6 @@
 .monster-comp {
   margin: 0px auto;
   padding-top: 50px;
-  opacity: 0;
   transition: opacity 1s;
 }
 .monster-comp img {
