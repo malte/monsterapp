@@ -6,7 +6,7 @@ import { Header } from "./components/Header";
 import { TypeControl } from "./components/TypeControl";
 import { PartsControl } from "./components/PartsControl";
 import { Swatches } from "./components/Swatches";
-import MonsterImage from "./components/MonsterImage";
+import MonsterImage from "./components/MonsterImage2";
 import { TotalRandom } from "./components/TotalRandom";
 
 class App extends Component {

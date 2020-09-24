@@ -12,144 +12,34 @@ const MonsterImage = props => {
   });
 
   const contrast = "200%";
+  const MonsterComposite = [];
+  const renderParts = (type, parts, color) => {
+    let partsNum = 8;
+    let i;
+    for (i = 0; i < partsNum; i++) {
+      console.log(`iteration: ${i}`)
+      MonsterComposite.push(
+      <img
+        style={{
+          filter: `brightness(.${50 +
+            2 * i}) contrast(${contrast}) sepia(1) saturate(2) hue-rotate(${
+              color
+            })contrast(200%)`
+          }}
+          alt=""
+          src={`${process.env.PUBLIC_URL}/monster-parts/${type}/${partsNum - i}/${parts[i]}.png`}
+      />
+      )
+    }
+  };
+
+  renderParts(props.type, props.parts, props.monsterColor);
   return (
     <div className="container">
       <div className="frame" />
-      <div
-        className="background"
-        style={{
-          backgroundColor: `hsl(${props.monsterColorValue - 180},55%,90%)`
-        }}
-      >
+      <div className="background" style={{ backgroundColor: `hsl(${props.monsterColorValue - 180},55%,90%)` }}>
         <div className="monster-comp" style={{ opacity: props.monsterOpacity }}>
-          <img
-            style={{
-              filter: `brightness(.50) contrast(${contrast}) sepia(1) saturate(2) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/8/" +
-              props.parts[0] +
-              ".png"
-            }
-          />
-          <img
-            style={{
-              filter: `brightness(.52) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/7/" +
-              props.parts[1] +
-              ".png"
-            }
-          />
-          <img
-            style={{
-              filter: `brightness(.54) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/6/" +
-              props.parts[2] +
-              ".png"
-            }
-          />
-          <img
-            style={{
-              filter: `brightness(.57) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/5/" +
-              props.parts[3] +
-              ".png"
-            }
-          />
-          <img
-            style={{
-              filter: `brightness(.60) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/4/" +
-              props.parts[4] +
-              ".png"
-            }
-          />
-          <img
-            style={{
-              filter: `brightness(.62) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/3/" +
-              props.parts[5] +
-              ".png"
-            }
-          />
-          <img
-            style={{
-              filter: `brightness(.62) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/2/" +
-              props.parts[6] +
-              ".png"
-            }
-          />
-          <img
-            style={{
-              filter: `brightness(.62) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
-                props.monsterColor
-              }) contrast(200%)`
-            }}
-            alt=""
-            src={
-              process.env.PUBLIC_URL +
-              "/monster-parts/" +
-              props.type +
-              "/1/" +
-              props.parts[7] +
-              ".png"
-            }
-          />
+         {MonsterComposite}
         </div>
       </div>
     </div>

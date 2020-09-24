@@ -24,7 +24,7 @@ const MonsterImage = props => {
         <div className="monster-comp" style={{ opacity: props.monsterOpacity }}>
           <img
             style={{
-              filter: `brightness(.50) contrast(${contrast}) sepia(1) saturate(2) hue-rotate(${
+              filter: `brightness(.50) contrast(${contrast}) sepia(1) saturate(1.1) hue-rotate(${
                 props.monsterColor
               }) contrast(200%)`
             }}
