@@ -5,8 +5,7 @@ import "./Swatches.css";
 
 
 const Swatches = (props) => {
-  const [colorIndex, setColorIndex] = useState(0);
-  console.log(`colorIndex: ${colorIndex}`)
+  // const [colorIndex, setColorIndex] = useState(0);
   console.log(`selectedColorField: ${props.selectedColorField}`)
 
 
@@ -17,11 +16,11 @@ const Swatches = (props) => {
         <Swatch
           key={i}
           colorIndex={i}
-          selectedColorField={props.selectedColorField || colorIndex}
+          selectedColorField={props.selectedColorField}
           swatchColor={swatchColors[i]}
           onClick={() => {
             props.onClick(i);
-            setColorIndex(i);
+            // setColorIndex(i);
           }}
         />
       );

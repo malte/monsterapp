@@ -1,15 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./MonsterImage.css";
-import { useState, useEffect } from "react";
 
 const MonsterImage = props => {
-  const [monsterOpacity, setMonsterOpacity] = useState();
-  useEffect(() => {
-    console.log("useEffect runs");
-    setTimeout(setMonsterOpacity(0), 5000);
-    setMonsterOpacity(1);
-  });
 
   const contrast = "200%";
   return (
