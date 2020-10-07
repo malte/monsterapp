@@ -17,10 +17,7 @@ const MonsterImage = props => {
         key={`${type}_${part}_${i}`}
         style={{
           filter: `brightness(.${50 +
-            2 * i}) contrast(${contrast}) sepia(1) saturate(2) hue-rotate(${
-              color
-            })contrast(200%)`
-          }}
+            2 * i}) contrast(${contrast}) sepia(1) saturate(2) hue-rotate(${color}) `}}
           alt=""
           src={`${process.env.PUBLIC_URL}/monster-parts/${type}/${partNum - i}/${part[i]}.png`}
       />
