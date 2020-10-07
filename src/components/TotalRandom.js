@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { swatchColors } from "./SwatchColors";
+
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -25,8 +27,9 @@ export class TotalRandom extends React.Component {
   handleClick() {
     const parts = this.randomizeParts();
     const type = this.randomizeType();
-    const color = Math.floor(Math.random() * Math.floor(360));
-    this.props.onClick(parts, type, color);
+    const colorIndex = Math.floor(Math.random() * Math.floor(swatchColors.length));
+    this.props.onClick(parts, type, colorIndex);
+
   }
 
 
@@ -42,5 +45,5 @@ export class TotalRandom extends React.Component {
 TotalRandom.propTypes = {
   parts: PropTypes.array,
   types: PropTypes.string,
-  color: PropTypes.number
+  colorIndex: PropTypes.number
 };
