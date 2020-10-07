@@ -13,9 +13,13 @@ export const Swatch = (props) => {
           ? "notched-10 swatch selected"
           : "notched-10 swatch"
       }
-      style={{
-        backgroundColor: `hsl(${props.swatchColor}, 50%, 50%)`
-      }}
+      style={
+        props.colorIndex === props.selectedColorField
+        ? { background: `radial-gradient(
+          hsl(${props.swatchColor}, 100%, 75%) 30%,
+          hsl(${props.swatchColor}, 90%, 50%) 90% )` }
+        : { background: `hsl(${props.swatchColor}, 50%, 50%)` }
+      }
       onClick={handleClick}
     />
   );
