@@ -5,9 +5,10 @@ import PropTypes from "prop-types";
 import { Header } from "./components/Header";
 import { TypeControl } from "./components/TypeControl";
 import { PartsControl } from "./components/PartsControl";
-import { Swatches } from "./components/Swatches";
+import Swatches from "./components/Swatches";
 import MonsterImage from "./components/MonsterImage2";
 import { TotalRandom } from "./components/TotalRandom";
+import { swatchColors } from "./components/SwatchColors";
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class App extends Component {
       monsterOpacity:1,
       monsterColorValue: 120,
       type: "birds",
-      parts: Array(8).fill(1)
+      parts: Array(8).fill(1),
+      selectedColorField: 0,
     };
     this.changeType = this.changeType.bind(this);
     this.getRandomParts = this.getRandomParts.bind(this);
@@ -34,7 +36,7 @@ class App extends Component {
       parts: parts
     });
   }
-  getTotalRandom(parts, newType, color) {
+  getTotalRandom(parts, newType, colorIndex) {
 
     this.setState({
       type: newType
@@ -43,16 +45,21 @@ class App extends Component {
       parts: parts
     });
     this.setState({
-      monsterColorValue: color
+      monsterColorValue: swatchColors[colorIndex]
+    });
+    this.setState({
+      selectedColorField: colorIndex
     });
 
   }
-
-  changeColor(newColor, i) {
+  changeColor(colorIndex) {
     this.setState({
-      monsterColorValue: newColor
+      monsterColorValue: swatchColors[colorIndex]
     });
-    console.log(i);
+    this.setState({
+      selectedColorField: colorIndex
+    });
+
   }
   render() {
     return (
@@ -63,7 +70,8 @@ class App extends Component {
           <PartsControl onClick={this.getRandomParts} type={this.state.type} />
           <TotalRandom onClick={this.getTotalRandom} />
         </div>
-        <Swatches onClick={swatchColor => this.changeColor(swatchColor)} />
+        <Swatches onClick={swatchColor => this.changeColor(swatchColor)}
+        selectedColorField={this.state.selectedColorField}/>
         <MonsterImage
           monsterOpacity={this.state.monsterOpacity}
           type={this.state.type}
