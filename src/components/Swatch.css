@@ -6,7 +6,7 @@
   box-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.2),
     inset -2px -2px 0px rgba(0, 0, 0, 0.2);
 }
-.swatch:hover {
+.swatch.selected, .swatch:hover {
     box-shadow: inset 1px 5px 5px rgba(0, 0, 0, 0.2),
       inset 0px -20px 20px rgba(0, 0, 0, 0.2);
   }
