@@ -9,9 +9,9 @@ export const Swatch = (props) => {
   return (
     <li
       className={
-        props.selectedColorField !== props.key
-          ? "notched-10 swatch"
-          : "notched-10 swatch selected"
+        props.colorIndex === props.selectedColorField
+          ? "notched-10 swatch selected"
+          : "notched-10 swatch"
       }
       style={{
         backgroundColor: `hsl(${props.swatchColor}, 50%, 50%)`
