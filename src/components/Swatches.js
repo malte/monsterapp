@@ -1,33 +1,34 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Swatch } from "./Swatch";
+import { swatchColors } from "./SwatchColors";
 import "./Swatches.css";
 
-export class Swatches extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      swatchColors: [0, 30, 59, 120, 200, 230, 276],
-      selectedColorField: ""
-    };
-  }
-  renderSwatches() {
+
+const Swatches = (props) => {
+  const [colorIndex, setColorIndex] = useState(0);
+  console.log(`colorIndex: ${colorIndex}`)
+  console.log(`selectedColorField: ${props.selectedColorField}`)
+
+
+  const renderSwatches = () => {
     const swatchesArray = [];
-    for (let i = 0; i < this.state.swatchColors.length; i++) {
+    for (let i = 0; i < swatchColors.length; i++) {
       swatchesArray.push(
         <Swatch
           key={i}
-          selectedColorfield={this.state.selectedColorfield}
-          swatchColor={this.state.swatchColors[i]}
+          colorIndex={i}
+          selectedColorField={props.selectedColorField || colorIndex}
+          swatchColor={swatchColors[i]}
           onClick={() => {
-            this.props.onClick(this.state.swatchColors[i]);
-            this.setState({ selectedColorField: i });
+            props.onClick(i);
+            setColorIndex(i);
           }}
         />
       );
     }
     return swatchesArray;
   }
-  render() {
-    return <ul className="swatches flex row space-in-between">{this.renderSwatches()}</ul>;
-  }
+  return <ul className="swatches flex row space-in-between">{renderSwatches()}</ul>;
 }
+
+export default Swatches;
